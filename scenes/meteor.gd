@@ -6,7 +6,7 @@ func _ready() -> void:
 	
 	var width = get_viewport().get_visible_rect().size[0]
 	var random_x = rng.randi_range(0,width)
-	var random_y = rng.randi_range(-400,-50)
+	var random_y = rng.randi_range(-150,-50)
 	position = Vector2(random_x,random_y)
 	
 func _process(delta):
