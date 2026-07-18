@@ -52,7 +52,9 @@ position = Vector2(1138, -333)
 position = Vector2(-563, 6)
 shape = SubResource("RectangleShape2D_dowtx")
 
-[node name="Timer" type="Timer" parent="." unique_id=1861436633]
+[node name="MeteorTimer" type="Timer" parent="." unique_id=1861436633]
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Meteors" type="Node2D" parent="." unique_id=527712227]
+
+[connection signal="timeout" from="MeteorTimer" to="." method="_on_meteor_timer_timeout"]
