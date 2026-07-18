@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bqt8ikncahcba"]
+
+[ext_resource type="Texture2D" uid="uid://comgcelbrwjnr" path="res://PNG/Lasers/laserBlue01.png" id="1_ojbhb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_35usp"]
+height = 58.0
+
+[node name="Lazer" type="Area2D" unique_id=807012049]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=859764267]
+position = Vector2(219, 170)
+texture = ExtResource("1_ojbhb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D" unique_id=1795355308]
+position = Vector2(1, -2)
+shape = SubResource("CapsuleShape2D_35usp")
