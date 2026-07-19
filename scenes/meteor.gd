@@ -32,4 +32,4 @@ func _process(delta):
 
 
 func _on_body_entered(body: Node2D) -> void:
-	print('body Entered') # Replace with function body.
+	print("hit by: ", body.name)

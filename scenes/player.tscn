@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://b4yj744bpoqmt" path="res://scenes/player.gd" id="1_g2els"]
 
 [node name="Player" type="CharacterBody2D" unique_id=1140701182]
-visibility_layer = 6
+collision_mask = 6
 script = ExtResource("1_g2els")
 
 [node name="PlayerImage" type="Sprite2D" parent="." unique_id=1244949373]
