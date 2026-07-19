@@ -6,6 +6,8 @@
 height = 58.0
 
 [node name="Lazer" type="Area2D" unique_id=807012049]
+light_mask = 8
+visibility_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=859764267]
 position = Vector2(219, 170)
