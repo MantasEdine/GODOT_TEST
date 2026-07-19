@@ -14,3 +14,6 @@ texture = ExtResource("1_4flbx")
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=1541464260]
 position = Vector2(311, 200)
 polygon = PackedVector2Array(-11, -45, 4, -44, 12, -16, 35, -2, 43, -10, 46, 17, 12, 21, 4, 33, -12, 29, -17, 20, -39, 16, -50, 18, -50, -11, -40, -4, -15, -13)
+
+[node name="LazerStartingPosition" type="Marker2D" parent="." unique_id=125423292]
+position = Vector2(308, 141)

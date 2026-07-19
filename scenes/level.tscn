@@ -62,4 +62,7 @@ autostart = true
 
 [node name="Meteors" type="Node2D" parent="." unique_id=527712227]
 
+[node name="Lazers" type="Node2D" parent="." unique_id=795201525]
+
+[connection signal="lazer" from="Player" to="." method="_on_player_lazer"]
 [connection signal="timeout" from="MeteorTimer" to="." method="_on_meteor_timer_timeout"]
