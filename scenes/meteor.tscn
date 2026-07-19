@@ -7,11 +7,11 @@
 radius = 37.94733
 
 [node name="Meteor" type="Area2D" unique_id=884692592]
+light_mask = 2
+visibility_layer = 9
 script = ExtResource("1_pxso2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=504348589]
-light_mask = 2
-visibility_layer = 9
 texture = ExtResource("2_83eji")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1042359599]
