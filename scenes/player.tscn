@@ -17,3 +17,9 @@ polygon = PackedVector2Array(-11, -45, 4, -44, 12, -16, 35, -2, 43, -10, 46, 17,
 
 [node name="LazerStartingPosition" type="Marker2D" parent="." unique_id=125423292]
 position = Vector2(90, -50)
+
+[node name="Lazer_Timer" type="Timer" parent="." unique_id=2104069122]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="Lazer_Timer" to="." method="_on_lazer_timer_timeout"]
