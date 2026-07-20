@@ -4,12 +4,32 @@
 [ext_resource type="Texture2D" uid="uid://22upr40a06d8" path="res://Backgrounds/blue.png" id="2_ppgk2"]
 [ext_resource type="PackedScene" uid="uid://blnxoscvkq4us" path="res://scenes/player.tscn" id="3_2r41h"]
 [ext_resource type="PackedScene" uid="uid://bf7ls1qb86aqn" path="res://scenes/meteor.tscn" id="4_klq6b"]
+[ext_resource type="Texture2D" uid="uid://b6qabt212yuv8" path="res://PNG/Effects/star1.png" id="5_klq6b"]
+[ext_resource type="Texture2D" uid="uid://bijye4ts5a1kq" path="res://PNG/Effects/star2.png" id="6_b121j"]
+[ext_resource type="Texture2D" uid="uid://cb8ubx8ngna8d" path="res://PNG/Effects/star3.png" id="7_8c41q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dowtx"]
 size = Vector2(1132, 650.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oi3di"]
 size = Vector2(1146, 187)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dowtx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_klq6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_b121j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8c41q")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 3.0
+}]
 
 [node name="Level" type="Node2D" unique_id=641005649]
 script = ExtResource("1_mx8sn")
@@ -63,6 +83,77 @@ autostart = true
 [node name="Meteors" type="Node2D" parent="." unique_id=527712227]
 
 [node name="Lazers" type="Node2D" parent="." unique_id=795201525]
+
+[node name="Stars" type="Node2D" parent="." unique_id=1167698127]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Stars" unique_id=120976054]
+sprite_frames = SubResource("SpriteFrames_dowtx")
+autoplay = "default"
+frame_progress = 0.8918718
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Stars" unique_id=1170618244]
+sprite_frames = SubResource("SpriteFrames_dowtx")
+frame_progress = 0.6445072
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Stars" unique_id=1203798243]
+sprite_frames = SubResource("SpriteFrames_dowtx")
+autoplay = "default"
+frame_progress = 0.6445072
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Stars" unique_id=1322572682]
+sprite_frames = SubResource("SpriteFrames_dowtx")
+autoplay = "default"
+frame_progress = 0.6445072
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="Stars" unique_id=260546044]
+sprite_frames = SubResource("SpriteFrames_dowtx")
+autoplay = "default"
+frame_progress = 0.6445072
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="Stars" unique_id=772355146]
+sprite_frames = SubResource("SpriteFrames_dowtx")
+autoplay = "default"
+frame_progress = 0.6445072
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="Stars" unique_id=266393984]
+sprite_frames = SubResource("SpriteFrames_dowtx")
+autoplay = "default"
+frame_progress = 0.6445072
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="Stars" unique_id=63899242]
+sprite_frames = SubResource("SpriteFrames_dowtx")
+autoplay = "default"
+frame_progress = 0.6445072
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="Stars" unique_id=1505708676]
+sprite_frames = SubResource("SpriteFrames_dowtx")
+autoplay = "default"
+frame_progress = 0.6445072
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="Stars" unique_id=262662752]
+sprite_frames = SubResource("SpriteFrames_dowtx")
+autoplay = "default"
+frame_progress = 0.6445072
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="Stars" unique_id=868151423]
+sprite_frames = SubResource("SpriteFrames_dowtx")
+autoplay = "default"
+frame_progress = 0.6445072
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="Stars" unique_id=1902444268]
+sprite_frames = SubResource("SpriteFrames_dowtx")
+autoplay = "default"
+frame_progress = 0.18966444
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="Stars" unique_id=832722203]
+sprite_frames = SubResource("SpriteFrames_dowtx")
+autoplay = "default"
+frame_progress = 0.6445072
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="Stars" unique_id=652681010]
+sprite_frames = SubResource("SpriteFrames_dowtx")
+autoplay = "default"
+frame_progress = 0.6445072
 
 [connection signal="lazer" from="Player" to="." method="_on_player_lazer"]
 [connection signal="timeout" from="MeteorTimer" to="." method="_on_meteor_timer_timeout"]
