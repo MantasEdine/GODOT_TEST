@@ -2,6 +2,7 @@ extends Area2D
 var speed : int
 var rotation_speed : int
 var direction : float
+var hp : int  # hit points; how many lazer hits this meteor survives
 
 
 
@@ -12,7 +13,10 @@ func _ready() -> void:
 	# meteor.gd, in _ready
 	var colors = ["Brown", "Grey"]
 	var sizes = {"big": 4, "med": 3, "small": 2, "tiny": 2}
+	# hp per size: bigger meteor = more lazer hits to destroy (lazers deal 1 each)
+	var size_hp = {"big": 4, "med": 3, "small": 2, "tiny": 1}
 	var size = sizes.keys().pick_random()
+	hp = size_hp[size]
 	var path = "res://PNG/Meteors/meteor%s_%s%d.png" % [colors.pick_random(), size, randi_range(1, sizes[size])]
 	$Sprite2D.texture = load(path)
 	
@@ -33,3 +37,20 @@ func _process(delta):
 
 func _on_body_entered(body: Node2D) -> void:
 	print("hit by: ", body.name)
+
+
+# lazers call this when they hit us; the meteor dies at 0 hp
+func take_damage(amount : int) -> void:
+	# already dead but not yet removed from the tree (queue_free waits until
+	# the end of the frame) -> ignore extra hits so we can't "die twice"
+	if hp <= 0:
+		return
+	hp -= amount
+	if hp <= 0:
+		queue_free()
+	else:
+		# quick flash so the player sees the hit landed: modulate is multiplied
+		# with the texture, so an overbright color washes the sprite out white,
+		# then the tween fades it back to normal (Color.WHITE = no tint)
+		var tween = create_tween()
+		tween.tween_property($Sprite2D,'modulate',Color.WHITE,0.15).from(Color(5, 5, 5))

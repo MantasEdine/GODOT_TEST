@@ -29,7 +29,10 @@ func _on_meteor_timer_timeout() -> void:
 	$Meteors.add_child(meteor)
 
 
-func _on_player_lazer(pos) -> void:
+func _on_player_lazer(pos, angle) -> void:
 	var lazer = lazer_scene.instantiate()
 	$Lazers.add_child(lazer)
 	lazer.position = pos
+	# rotating the whole Area2D tilts the sprite AND the flight path,
+	# because lazer.gd moves along Vector2.UP.rotated(rotation)
+	lazer.rotation = angle
